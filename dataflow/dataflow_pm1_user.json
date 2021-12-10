@@ -21,12 +21,8 @@
 					"name": "investcloudUsers"
 				}
 			],
-			"transformations": [
-				{
-					"name": "DerivedColumn1"
-				}
-			],
-			"script": "source(output(\n\t\tUSERNAME as string,\n\t\tFIRSTNAME as string,\n\t\tLASTNAME as string,\n\t\tMIDDLENAME as string,\n\t\tSTATUS as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\twildcardPaths:['/users/users.csv']) ~> pm1Users\npm1Users derive() ~> DerivedColumn1\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tinput(\n\t\tuid as string,\n\t\tfirstname as string,\n\t\tlastname as string,\n\t\tmiddlename as string,\n\t\tstatus as string\n\t),\n\tpartitionFileNames:['ic_users.csv'],\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\tsaveOrder: 1,\n\tpartitionBy('hash', 1)) ~> investcloudUsers"
+			"transformations": [],
+			"script": "source(output(\n\t\tUSERNAME as string,\n\t\tFIRSTNAME as string,\n\t\tLASTNAME as string,\n\t\tMIDDLENAME as string,\n\t\tSTATUS as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\twildcardPaths:['/users/users.csv']) ~> pm1Users\npm1Users sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tinput(\n\t\tuid as string,\n\t\tfirstname as string,\n\t\tlastname as string,\n\t\tmiddlename as string,\n\t\tstatus as string\n\t),\n\tpartitionFileNames:['ic_users.csv'],\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\tsaveOrder: 1,\n\tpartitionBy('hash', 1)) ~> investcloudUsers"
 		}
 	}
 }
