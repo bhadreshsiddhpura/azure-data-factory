@@ -1,0 +1,45 @@
+{
+	"name": "pm1_users",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ubsstorage_linked_service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "users.*csv",
+				"folderPath": "users",
+				"container": "input-pm1"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "USERNAME",
+				"type": "String"
+			},
+			{
+				"name": "FIRSTNAME",
+				"type": "String"
+			},
+			{
+				"name": "LASTNAME",
+				"type": "String"
+			},
+			{
+				"name": "MIDDLENAME",
+				"type": "String"
+			},
+			{
+				"name": "STATUS",
+				"type": "String"
+			}
+		]
+	}
+}
