@@ -56,6 +56,8 @@
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
+							"wildcardFolderPath": "/ubs-dbs-filesystem/inbound/monaco",
+							"wildcardFileName": "pm1_users_*.csv",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -65,7 +67,8 @@
 					"dataset": {
 						"referenceName": "pm1_users",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": false
 				}
 			}
 		],
