@@ -10,6 +10,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@variables('filename')",
+					"type": "Expression"
+				},
 				"folderPath": "processing/transformed",
 				"fileSystem": "ubs-dbs-filesystem"
 			},
