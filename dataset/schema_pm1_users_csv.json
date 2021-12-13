@@ -1,0 +1,41 @@
+{
+	"name": "schema_pm1_users_csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "pm1_users.csv",
+				"folderPath": "schema",
+				"fileSystem": "ubs-dbs-filesystem"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "USERNAME",
+				"type": "String"
+			},
+			{
+				"name": "FIRSTNAME",
+				"type": "String"
+			},
+			{
+				"name": "LASTNAME",
+				"type": "String"
+			},
+			{
+				"name": "MIDDLENAME",
+				"type": "String"
+			}
+		]
+	}
+}
