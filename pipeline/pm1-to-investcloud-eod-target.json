@@ -5,7 +5,14 @@
 			{
 				"name": "move-transformed-to-target",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Set filename",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -64,6 +71,16 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Set filename",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "filename",
+					"value": "User"
+				}
 			}
 		],
 		"parameters": {
