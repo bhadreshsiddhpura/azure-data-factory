@@ -25,20 +25,6 @@
 					},
 					"traceLevel": "Fine"
 				}
-			},
-			{
-				"name": "validate-pm1-users-file",
-				"type": "Validation",
-				"dependsOn": [],
-				"userProperties": [],
-				"typeProperties": {
-					"dataset": {
-						"referenceName": "schema_pm1_users_csv",
-						"type": "DatasetReference"
-					},
-					"timeout": "7.00:00:00",
-					"sleep": 10
-				}
 			}
 		],
 		"annotations": []

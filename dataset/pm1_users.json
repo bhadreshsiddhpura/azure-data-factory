@@ -2,17 +2,17 @@
 	"name": "pm1_users",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ubsstorage_linked_service",
+			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
-				"fileName": "users.*csv",
-				"folderPath": "users",
-				"container": "input-pm1"
+				"type": "AzureBlobFSLocation",
+				"fileName": "pm1_users_*.csv",
+				"folderPath": "inbound/monaco",
+				"fileSystem": "ubs-dbs-filesystem"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
