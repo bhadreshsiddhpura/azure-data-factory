@@ -2,15 +2,20 @@
 	"name": "investcloud_users",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ubsstorage_linked_service",
+			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
-				"container": "output-investcloud"
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@variables('filename')",
+					"type": "Expression"
+				},
+				"folderPath": "outbound/investcloud",
+				"fileSystem": "ubs-dbs-filesystem"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
