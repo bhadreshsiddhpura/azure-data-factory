@@ -68,7 +68,13 @@
 				"outputs": [
 					{
 						"referenceName": "investcloud_users",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": {
+								"value": "@variables('filename')",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			},
