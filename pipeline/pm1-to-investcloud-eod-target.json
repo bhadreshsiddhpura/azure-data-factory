@@ -79,7 +79,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "filename",
-					"value": "User"
+					"value": {
+						"value": "@concat('users_', replace(substring(utcnow(),0,19),'-',''),'.csv')",
+						"type": "Expression"
+					}
 				}
 			}
 		],
