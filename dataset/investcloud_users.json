@@ -16,7 +16,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@concat(dataset().filename, replace(substring(utcnow(),0,10),'-',''))",
+					"value": "@dataset().filename",
 					"type": "Expression"
 				},
 				"folderPath": "outbound/investcloud",
