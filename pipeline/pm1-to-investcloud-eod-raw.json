@@ -1,6 +1,9 @@
 {
 	"name": "pm1-to-investcloud-eod-raw",
 	"properties": {
+		"folder": {
+			"name": "pm1-to-investcloud"
+		},
 		"annotations": []
 	}
 }
