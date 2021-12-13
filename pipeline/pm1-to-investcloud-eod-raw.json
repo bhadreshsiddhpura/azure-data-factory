@@ -72,9 +72,6 @@
 		"parameters": {
 			"filename": {
 				"type": "string"
-			},
-			"dirname": {
-				"type": "string"
 			}
 		},
 		"folder": {
