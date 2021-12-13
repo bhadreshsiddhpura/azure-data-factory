@@ -55,7 +55,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "raw_dataset",
+						"referenceName": "investcloud_users",
 						"type": "DatasetReference"
 					}
 				]
