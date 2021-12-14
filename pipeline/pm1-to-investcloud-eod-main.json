@@ -26,7 +26,7 @@
 				"type": "ExecutePipeline",
 				"dependsOn": [
 					{
-						"activity": "pm1-to-investcloud-eod-raw",
+						"activity": "pm1-to-investcloud-eod-transform",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -36,6 +36,32 @@
 				"typeProperties": {
 					"pipeline": {
 						"referenceName": "pm1-to-investcloud-eod-target",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"filename": {
+							"value": "@pipeline().parameters.filename",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "pm1-to-investcloud-eod-transform",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "pm1-to-investcloud-eod-raw",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pm1-to-investcloud-eod-transform",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true,
