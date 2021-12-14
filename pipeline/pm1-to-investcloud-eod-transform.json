@@ -1,0 +1,41 @@
+{
+	"name": "pm1-to-investcloud-eod-transform",
+	"properties": {
+		"activities": [
+			{
+				"name": "transform-pm1-users",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/b.siddhpura@reply.com/transform-pm1-users"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"filename": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"filename": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "pm1-to-investcloud"
+		},
+		"annotations": []
+	}
+}
